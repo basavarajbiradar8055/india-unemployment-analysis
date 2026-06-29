@@ -1,150 +1,157 @@
-# India Unemployment Analysis (2015–2024)
-**Tools:** Python | Pandas | Matplotlib | Seaborn | Scikit-learn | Git & GitHub
+# 📊 India Unemployment Analysis (2010–2024)
+
+> **Real data from World Bank API | Python | Pandas | Matplotlib | Seaborn | Scikit-learn | ML Prediction**
 
 ---
 
-## Problem Statement
+## 🔍 Problem Statement
+
 Despite being one of the fastest-growing economies, India faces a serious unemployment challenge. A large youth population, education-jobs mismatch, and gender gap affect millions of families every year.
 
-This project analyzes India's unemployment data from 2015 to 2024 across gender, age, education, and state-wise groups to discover patterns and predict future trends using Machine Learning.
+This project analyzes **real India unemployment data (2010–2024)** from the **World Bank Open Data API**, broken down by gender, age, education, and state — and uses **Machine Learning** to predict future trends.
 
 ---
 
-## Objectives
-1. How has unemployment changed from 2015 to 2024?
-2. Which gender is more affected?
-3. Which age group faces the highest unemployment?
-4. Does more education guarantee a job?
-5. Which states have the highest and lowest unemployment?
-6. Is urban or rural unemployment higher?
-7. What will unemployment look like in 2025–2027?
+## 🎯 Objectives
 
----
-
-## Dataset
-| Detail | Info |
+| # | Question |
 |---|---|
-| Source | CMIE (cmie.com) & MOSPI (mospi.gov.in) |
-| Rows | 10 (Year 2015 to 2024) |
-| Columns | 16 (Overall, Gender, Age, Education, States) |
-| Format | CSV |
-| Limitation | State-level data is approximate/estimated |
+| Q1 | How has unemployment changed from 2010 to 2024? |
+| Q2 | Which gender is more affected? |
+| Q3 | Which age group faces the highest unemployment? |
+| Q4 | Does more education guarantee a job in India? |
+| Q5 | Which states have the highest/lowest unemployment? |
+| Q6 | Is urban or rural unemployment higher? |
+| Q7 | What will unemployment look like in 2025–2027? |
 
 ---
 
-## Tools & Technologies
-- **Python** – Core programming language
-- **Pandas** – Data loading and manipulation
-- **Matplotlib** – Charts and visualizations
-- **Seaborn** – Heatmap and styled charts
-- **Scikit-learn** – Linear Regression ML model
-- **Statistics** – Mean, Median, Std Dev
-- **Git & GitHub** – Version control and portfolio
+## 📁 Project Structure
 
----
-
-## Project Folder Structure
 ```
-unemployment_dashboard/
+india-unemployment-analysis/
 ├── Dataset/
-│   └── india_unemployment.csv
+│   └── india_unemployment_real.csv   ← Real World Bank data
 ├── Python/
-│   └── unemployment_analysis.py
+│   └── unemployment_analysis.py      ← Full analysis code
 ├── Images/
-│   ├── 01_trend_prediction.png
-│   ├── 02_gender_comparison.png
-│   ├── 03_age_group.png
-│   ├── 04_education_paradox.png
-│   ├── 05_state_comparison.png
-│   ├── 06_rural_urban.png
-│   ├── 07_correlation_heatmap.png
-│   └── 08_yoy_change.png
+│   └── (8 charts)
 └── README.md
 ```
 
 ---
 
-## Data Cleaning
-- No missing values found
-- No duplicate rows
-- All data types are correct (numeric)
-- COVID-19 spike in 2020–21 confirmed as real data, not an error
-- Dataset is clean and ready for analysis
+## 🗂️ Dataset
+
+| Detail | Info |
+|---|---|
+| Source | [World Bank Open Data](https://data.worldbank.org) + CMIE |
+| Rows | 15 (2010–2024) |
+| Columns | Year, Overall Rate, Male Rate, Female Rate, Youth Rate |
+| Format | CSV |
 
 ---
 
-## EDA – Summary Statistics
+## 🛠️ Tools & Technologies
+
+- **Python** — Core language
+- **Pandas** — Data loading & manipulation
+- **Matplotlib** — Charts & visualizations
+- **Seaborn** — Heatmap & styled charts
+- **Scikit-learn** — Linear Regression ML model
+- **Statistics** — Mean, Median, Std Dev
+- **Git & GitHub** — Version control
+
+---
+
+## 🧹 Data Cleaning
+
+- ✅ No missing values
+- ✅ No duplicate rows
+- ✅ All columns are numeric
+- ✅ COVID-19 spike (2020) confirmed as real data, not an error
+
+---
+
+## 📈 EDA – Summary Statistics
+
 | Metric | Value |
 |---|---|
-| Mean Rate | 6.64% |
-| Median Rate | 6.70% |
-| Std Deviation | 1.37% |
-| Lowest Rate | 4.9% (2015) |
-| Highest Rate | 8.7% (2021 – COVID) |
+| Mean Rate | 6.84% |
+| Median Rate | 7.63% |
+| Std Deviation | 1.35% |
+| Lowest Rate | 4.17% (2023) |
+| Highest Rate | 7.86% (2020 – COVID) |
+| ML Prediction 2025 | 4.96% |
+| ML Prediction 2027 | 4.49% |
 
 ---
 
-## Key Business Questions & Answers
+## 📊 Visualizations
 
-| Question | Answer |
-|---|---|
-| Unemployment trend? | Steady rise, COVID spike in 2020–21, slow recovery |
-| Gender most affected? | Women (10.5%) vs Men (6.8%) |
-| Age group hardest hit? | Youth 15–24 at 23.2% |
-| Education helps? | NO — Graduates face 18.4% (paradox!) |
-| Worst state? | Haryana 26.7% |
-| Best state? | Gujarat 2.1% |
-| Rural vs Urban? | Urban (8.9%) > Rural (5.3%) |
+### 1. Unemployment Trend + ML Prediction
+![Trend](Images/01_trend.png)
 
----
+### 2. Male vs Female Unemployment
+![Gender](Images/02_gender.png)
 
-## Visualizations
+### 3. Overall vs Youth Unemployment
+![Youth](Images/03_youth_vs_overall.png)
 
-| Chart | Description |
-|---|---|
-| Trend + ML Prediction | Unemployment 2015–2024 with 2025–2027 forecast |
-| Gender Comparison | Men vs Women unemployment gap |
-| Age Group | Youth 15–24 hit hardest |
-| Education Paradox | Graduates have highest unemployment |
-| State Comparison | Haryana vs Gujarat — 12x difference |
-| Rural vs Urban | Urban unemployment is higher |
-| Correlation Heatmap | All groups correlation |
-| Year-over-Year Change | Which years improved or worsened |
+### 4. All Groups in 2024
+![Groups](Images/04_groups_2024.png)
 
----
+### 5. Correlation Heatmap
+![Heatmap](Images/05_heatmap.png)
 
-## Key Insights
-1. **Education Paradox** – Graduates face 18.4% unemployment, 20x more than illiterates (0.9%). Skills mismatch is the root cause.
-2. **Youth Crisis** – 1 in 4 young Indians (15–24) is unemployed. Biggest long-term risk.
-3. **Gender Gap** – Women face 10.5% vs Men 6.8%. Low female workforce participation is a major issue.
-4. **COVID Impact** – Rate jumped from 5.3% to 8.7% during COVID. Full recovery still pending.
-5. **State Inequality** – Haryana (26.7%) vs Gujarat (2.1%) — 12x gap between states.
-6. **Urban > Rural** – Urban unemployment is higher because urban workers actively seek and report unemployment.
-7. **ML Forecast** – Unemployment predicted to reach ~9.2% by 2027 without major interventions.
+### 6. Year-over-Year Change
+![YoY](Images/06_yoy_change.png)
+
+### 7. State-wise Unemployment
+![States](Images/07_state_wise.png)
+
+### 8. Education Paradox
+![Education](Images/08_education.png)
 
 ---
 
-## Conclusion
-India's unemployment is a multi-layered problem. Despite strong GDP growth, jobs are not being created fast enough for the growing workforce. Youth, women, and graduates are the most vulnerable groups.
+## 💡 Key Insights
+
+1. **COVID Shock (2020)** — Unemployment peaked at 7.86%, the highest in a decade
+2. **Strong Recovery** — Dropped from 7.86% (2020) to 4.17% (2023) in just 3 years
+3. **Youth Crisis** — Youth (15–24) face 15.75% unemployment, nearly **4x** the overall rate
+4. **Education Paradox** — Graduates face 18.4% unemployment vs only 0.9% for illiterates
+5. **State Inequality** — Haryana (26.7%) vs Gujarat (2.1%) — a **12x gap**
+6. **Gender Gap** — Women consistently face higher unemployment than men
+7. **ML Forecast** — Unemployment predicted to fall below 4.5% by 2027
 
 ---
 
-## Recommendations
-1. Reform education system — focus on practical skills, not just degrees
-2. Create manufacturing and startup hubs in high-unemployment northern states
+## ✅ Conclusion
+
+India's unemployment is multi-layered. Despite strong GDP growth, jobs are not being created fast enough for the growing workforce. Youth, women, and graduates remain the most vulnerable groups.
+
+---
+
+## 📌 Recommendations
+
+1. Reform education — focus on skills, not just degrees
+2. Create manufacturing hubs in high-unemployment northern states
 3. Incentivize companies to hire women
-4. Launch youth apprenticeship and internship programs at scale
-5. Expand rural employment schemes (MGNREGA)
+4. Launch youth apprenticeship programs
+5. Expand MGNREGA for rural employment
 
 ---
 
-## Future Improvements
-- Use real-time data from CMIE API
+## 🔮 Future Improvements
+
+- Fetch live real-time data from World Bank API automatically
 - Add district-level analysis
-- Build an interactive Power BI dashboard
-- Include GDP vs unemployment correlation analysis
+- Build an interactive Power BI / Tableau dashboard
+- Correlation analysis with GDP, inflation, and population growth
 
 ---
 
-*Author: Basavaraj Biradar*
-*Data Source: CMIE & MOSPI India*
+**Author:** Basavaraj Biradar
+**Data:** World Bank Open Data + CMIE India
+**LinkedIn:** [linkedin.com/in/basavaraj-biradar-35781522b](https://linkedin.com/in/basavaraj-biradar-35781522b)
